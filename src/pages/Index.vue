@@ -1,17 +1,19 @@
 <template>
   <q-layout view="lHh lpr lFf">
-    <q-header class="q-py-sm" style="background-color: #1c1b21;" :style="'border-bottom: 2px solid '+ theme_color">
+    <q-header class="q-py-sm" style="background-color: #ffffff;" :style="'border-bottom: 2px solid '+ theme_color">
         <q-toolbar>
-        <span :style="'font-size: 35px;color:'+theme_color" class="my-font text-h6 q-mr-md">Kudos</span>
+          <img :src="require('../statics/icons/main_logo.png')" alt="Logo" style="height: 50px; margin-right: 10px;">
+
+
+          <span :style="'font-size: 25px;color:'+theme_color+'; font-weight: bold'" class="text-h6 q-mr-md">庄信科技</span>
         <q-space ></q-space>
       <q-tabs v-model="selected_tab" shrink>
-        <q-tab :style= "[selected_tab == 't_0' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_portfolio');" style="width:120px;min-height:auto !important;color: white" label="Portfolio" />
-        <q-tab :style= "[selected_tab == 't_1' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_about_us');" style="width:120px;min-height:auto !important;color: white" label="About Us" />
-        <q-tab :style= "[selected_tab == 't_2' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_services');" style="width:120px;min-height:auto !important;color: white" label="Services" />
-        <q-tab :style= "[selected_tab == 't_3' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_testimonial');" style="min-height:auto !important;color: white" label="Testimonial" />
-        <q-tab :style= "[selected_tab == 't_4' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_team');" style="width:120px;min-height:auto !important;color: white" label="Team" />
-        <q-tab :style= "[selected_tab == 't_5' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_pricing');" style="width:120px;min-height:auto !important;color: white" label="Pricing" />
-	<q-tab :style= "[selected_tab == 't_6' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_news');" style="width:120px;min-height:auto !important;color: white" label="News" />
+        <q-tab :style= "[selected_tab == 't_0' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="$router.push('/about')" style="width:120px;min-height:auto !important;color: black" label="关于我们" />
+        <q-tab :style= "[selected_tab == 't_1' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_about_us');" style="width:120px;min-height:auto !important;color: black" label="产品展示" />
+        <q-tab :style= "[selected_tab == 't_2' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_services');" style="width:120px;min-height:auto !important;color: black" label="生产流程" />
+        <q-tab :style= "[selected_tab == 't_3' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_testimonial');" style="min-height:auto !important;color: black" label="公司团队" />
+        <q-tab :style= "[selected_tab == 't_4' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_team');" style="width:120px;min-height:auto !important;color: black" label="新闻资讯" />
+	<q-tab :style= "[selected_tab == 't_6' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_news');" style="width:120px;min-height:auto !important;color: black" label="联系我们" />
         <q-btn class="q-mr-md" size="12px" :style="'min-height:auto !important;background:'+ theme_color +'; color: white; padding:1px'" dense icon="color_lens">
             <q-tooltip transition-show="flip-right"
                        transition-hide="flip-left" self="center left" anchor="center right">Theme color
@@ -28,8 +30,6 @@
               />
             </q-menu>
           </q-btn>
-          <a style="font-size: 25px;" class="float-right q-mr-sm" href="https://github.com/sponsors/mayank091193"
-           target="_blank" title="Donate"><i class="fas fa-heart" style="color: #eb5daa"></i></a>
       </q-tabs>
         
       </q-toolbar>
@@ -50,39 +50,37 @@
           height="639px"
         >
           <q-carousel-slide class="q-pa-none" :name="1" img-src="/statics/images/image_1.jpg">
-<div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.68) !important;">
+<div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.3) !important;">
             <div class="custom-caption">
-              <div class="text-h2 main_line animation_2">WELCOME TO <span :style="'color:'+theme_color">KUDOS</span></div><br><br><br>
-              <div class="text-h4 animation_1">The Web as I envisaged it, we have not seen it yet. The future<br> is still so much bigger than the past.</div><br><br><br>
+              <div class="text-h2 main_line animation_2">开创未来，科技引领</span></div><br><br><br>
+              <div class="text-h4 animation_1">做行业标准的示范者，做未来赛道的定义者</div><br><br><br>
 <div class="animation_2">
-<q-btn size="md" :style="'background:'+ theme_color +'; color: white'" label="READ MORE"/>
 </div>
             </div>
 </div>
           </q-carousel-slide>
           <q-carousel-slide class="q-pa-none":name="2" img-src="/statics/images/image_2.jpg">
-<div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.68) !important;">
+<div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.3) !important;">
             <div class="custom-caption">
-    	      <div class="text-h2 main_line animation_2" style="font-size:65px;"><span :style="'color:'+theme_color">KUDOS</span> FOR THE BEST</div><br><br><br>
-              <div class="text-h4 animation_1">A man who dares to waste one hour of time has <br>not discovered the value of life.</div><br><br><br>
+    	      <div class="text-h2 main_line animation_2" style="font-size:65px;">专业研发，成就卓越</div><br><br><br>
+              <div class="text-h4 animation_1">以每一毫米的苛求，兑现超越期待的品质承诺</div><br><br><br>
 <div class="animation_2">
-<q-btn size="md" :style="'background:'+ theme_color +'; color: white'" label="READ MORE"/>
 </div>
             </div>
 </div>
           </q-carousel-slide>
           <q-carousel-slide class="q-pa-none":name="3" img-src="/statics/images/image_3.jpg">
-<div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.68) !important;">
+<div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.3) !important;">
             <div class="custom-caption">
-    	      <div class="text-h2 main_line animation_2" style="font-size:65px;">THE PATH OF <span :style="'color:'+theme_color">SUCCESS</span></div><br><br><br>
-              <div class="text-h4 animation_1">We have to stop optimizing for programmers and <br>start optimizing for users.</div><br><br><br>
+    	      <div class="text-h2 main_line animation_2" style="font-size:65px;">源自自然，铸就品质</span></div><br><br><br>
+              <div class="text-h4 animation_1">从大地到工艺，赋能可持续的创新之路</div><br><br><br>
 <div class="animation_2">
-<q-btn size="md" :style="'background:'+ theme_color +'; color: white'" label="READ MORE"/>
 </div>
             </div>
 </div>
           </q-carousel-slide>
         </q-carousel>
+        
         <div class="row">
           <div class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
             <q-card class="q-pa-sm flex flex-center text-center box-shadow" style="margin: 40px;">
@@ -150,24 +148,25 @@
             </q-card>
           </div>
         </div>
+        
         <div class="quote">
           <div class="q-pt-xl full-width full-height flex flex-center" style="background-color: #000000ad !important;">
-            <h3 class="text-white text-center">Lorem ipsum dolor sit amet, consectetur <br>adipiscing elit, sed do
-              eiusmod tempor incididunt ut <br> labore et dolore magna aliqua.
-              <br>
-              <br>
-              <q-btn type="a" href="https://github.com/sponsors/mayank091193" size="lg"
-                     :style="'background:'+ theme_color +'; color: white'" label="Support Me"/>
-            </h3>
+            <h3 class="text-white" style="font-size: 20px; line-height: 1.5; max-width: 800px; margin-left: auto; margin-right: auto;">
+  唐山庄信科技有限公司成立于1998年，座落于中国的北方瓷都--河北唐山。20多年来，公司专注于卫生陶瓷和日用陶瓷行业的釉料及熔块的研发、生产和技术服务，公司生产智洁釉、抗菌釉、无铅釉、及陶瓷熔块等系列产品，服务于30多家品牌工厂，每年有5000万件卫生洁具产品应用我公司釉料产品。庄信科技秉承诚信经营、品质服务，绿色健康的发展理念，不断研发新产品，与国内院校、科研院所建立了密切的产学研合作关系。
+  <br><br>为了全方位服务好客户，公司经营陶瓷釉料的全系列产品，如：水洗钾长石粉、纤维素CMC、硅酸锆、煅烧氧化锌、煅烧氧化铝粉、方解石粉、白云石粉。
+  <br><br>为了迎接新时代发展战略，公司与高校及科研院所，共同研究开发新能源储能电池材料，金属防护材料，利用固废生产发泡陶瓷绿色建材等，符合国家战略性新型产业的研究。
+  <br><br>“专业铸就品质，诚信创造价值”，公司将以先进的研发手段，严格的管理制度，稳定的产品质量，强有力的营销网络，完善的服务体系，为陶瓷行业的客户提供专业化、标准化的技术服务。<br><br><br>
+</h3>
+
           </div>
         </div>
         <div style="background: #f7f7f7" id="id_portfolio">
           <br>
           <div class="row">
             <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-              <h5 class="text-center">Our Portfolio
+              <h5 class="text-center">产品展示
                 <br>
-                <span class="text-center text-grey text-h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</span>
+                <span class="text-center text-grey text-h6">Products</span>
               </h5>
             </div>
           </div>
@@ -183,16 +182,13 @@
                     <q-flashcard-section transition="fade-in" class="fit" :active="active">
                       <div class="fit" :style="background_style"></div>
                       <q-flashcard-section transition="drop-down" class="text-center my-header" :active="active">
-                        Profile Title
+                        硅酸锆
                       </q-flashcard-section>
                       <q-flashcard-section transition="slide-up-in" class="my-text" :active="active">
-                        For beautiful eyes, look for the good in others; for beautiful lips, speak only words of kindness; and for poise, walk with the knowledge that you are never alone.
+                        庄信科技生产的锆英砂因其高白度、高锆含量和稳定的质量，在中国同类产品中属于一流产品。
                       </q-flashcard-section>
                       <q-flashcard-section transition="fade-in" class="fit flex justify-center items-end q-pb-lg"
                                            :active="active">
-                        <q-btn class="q-mr-md" :style="'color:'+theme_color" style="background-color:white" round
-                               icon="card_giftcard"/>
-                        <q-btn :style="'color:'+theme_color" style="background-color:white" round icon="link"/>
                       </q-flashcard-section>
                     </q-flashcard-section>
                   </q-flashcard>
@@ -202,6 +198,7 @@
             </div>
           </div>
         </div>
+        <!--
         <div class="row" id="id_about_us">
           <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
             <h5 class="text-center">About Us
@@ -346,6 +343,7 @@
             </div>
           </div>          
         </div>
+        -->
 <div class="quote" id="id_testimonial">
 <div style="background-color: #000000ad !important;">
 <q-carousel
@@ -363,12 +361,10 @@
       <q-carousel-slide style="padding-bottom: 140px" name="style" class="column no-wrap flex-center">
         <img :style="'margin-top:100px;border-radius:5px;border: 4px solid ' + theme_color" src="/statics/images/team_1.jpg" width=150 height=150>
 	<div class="q-mt-md text-h6 text-center">
-	   <span :style="'color:'+theme_color">John Doe</span><br><span class="text-overline">Organization Founder</span>
+	   <span :style="'color:'+theme_color">老爸</span><br><span class="text-overline">董事长</span>
 	</div>
         <div class="q-mt-md text-h6 text-center">
-          Lorem ipsum dolor sit amet, consectetur
-adipiscing elit, sed do eiusmod tempor incididunt ut<br>
-labore et dolore magna aliqua.
+          老爸，唐山庄信科技有限公司的董事长，具有超过30年的行业经验。
         </div>
       </q-carousel-slide>
       <q-carousel-slide style="padding-bottom: 140px" name="tv" class="column no-wrap flex-center">
@@ -395,239 +391,14 @@ labore et dolore magna aliqua.
       </q-carousel-slide>
     </q-carousel>
 </div>
-</div>
-        <div class="row" id="id_team">
-            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-              <h5 class="text-center">Our Team
-                <br>
-                <span
-                  class="text-center text-grey text-h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-              </h5>
-            </div>
-          </div>        
-          <div class="row text-center flex flex-center">
-            <div class="col-md-12 col-lg-12 col-sx-12 col-sm-12 q-px-xl" style="width:100%;overflow:auto;">
-              <q-carousel
-              v-model="team_slide"
-              transition-prev="slide-right"
-              transition-next="slide-left"
-              swipeable
-              animated
-	      infinite
-              autoplay
-              control-color="primary"
-              navigation
-              padding
-              height="300px"
-              class="rounded-borders"
-            >
-              <q-carousel-slide v-for="val in [1,2,3]" :key="val" :name="val" class="column no-wrap">
-                <div class="row fit justify-center items-center q-gutter-xs q-col-gutter no-wrap">
-                  <span v-for="index in 4" :key="index">
-                  <q-flashcard :no-hover="hover" :style="team_style">
-                    <q-flashcard-section transition="['nudge-out', 'fade-out']" :active="active">
-                      <img :src="'/statics/images/team_'+index+'.jpg'" width=260 height=263>
-                    </q-flashcard-section>
-                    <q-flashcard-section transition="fade-in" class="fit" :active="active">
-                      <div class="fit" :style="background_style"></div>
-                      <q-flashcard-section transition="shake-down" class="text-center team-header" :active="active">
-                        JOHN DOE
-                      </q-flashcard-section>
-                      <q-flashcard-section transition="spin-in" class="team-text" :active="active">
-                        Founder and Director
-                      </q-flashcard-section>
-                      <q-flashcard-section style="padding-bottom: 50px" transition="slide-up-in" class="fit flex justify-center items-end"
-                                           :active="active">
-                        <q-btn class="q-mr-md" :style="'color:'+theme_color" style="background-color:white" round
-                               icon="card_giftcard"/>
-                        <q-btn :style="'color:'+theme_color" style="background-color:white" round icon="link"/>
-                      </q-flashcard-section>
-                    </q-flashcard-section>
-                  </q-flashcard>
-                  </span>
-                </div>
-              </q-carousel-slide>
-            </q-carousel>
-            </div>
-          </div>          
-          <div class="pricing" id="id_pricing">
-          <div class="" style="background-color: #000000ad !important;">
-          <div class="row">
-            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-              <h5 class="text-center text-white">Our Pricing Plan
-                <br>
-                <span
-                  class="text-center text-grey text-h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-              </h5>
-            </div>
-          </div> 
-          <div class="row q-col-gutter-sm q-px-xl">
-          <div class="col-lg-3 col-md-3 col-xs-12 col-sm-6 q-px-lg">
-            <q-card>
-              <q-card-section class="text-white" style="background: #ec982f">
-                <div class="text-h6 text-center">
-                  FREE
-                </div>
-              </q-card-section>
-              <q-card-section class="q-pa-md">
-                <q-list dense padding style="border-bottom: 1px solid lightgrey;">
-                  <q-item><span class="text-weight-bold">For small size companies</span></q-item>
-                  <q-item>
-                      50 GB storage
-                  </q-item>
-                  <q-item>
-                      10 Domains
-                  </q-item>
-                  <q-item>
-                      15 Projects
-                  </q-item>
-                  <q-item>
-                      Free Deployment
-                  </q-item>
-                </q-list>
-              </q-card-section>
-              <q-card-section class="q-pa-none" style="color: #ec982f">
-                <div class="text-center">
-                  <span class="text-h2 text-center">$0</span>/mo
-                </div>
-              </q-card-section>
-              <q-card-section>
-                <div class="text-center q-px-lg">
-                  <q-btn size="md" class="full-width q-pa-xs"
-                     style="background: #ec982f; color: white" label="Choose Plan"/>
-                     <br>
-                     <div class="q-mt-md">Terms and Conditions apply</div>
-                </div>
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col-lg-3 col-md-3 col-xs-12 col-sm-6 q-px-lg">
-            <q-card>
-              <q-card-section class="text-white" style="background: #f4655f">
-                <div class="text-h6 text-center">
-                  STANDARD
-                </div>
-              </q-card-section>
-              <q-card-section class="q-pa-md">
-                <q-list dense padding style="border-bottom: 1px solid lightgrey;">
-                  <q-item><span class="text-weight-bold">For medium companies</span></q-item>
-                  <q-item>
-                      50 GB storage
-                  </q-item>
-                  <q-item>
-                      10 Domains
-                  </q-item>
-                  <q-item>
-                      15 Projects
-                  </q-item>
-                  <q-item>
-                      Free Deployment
-                  </q-item>
-                </q-list>
-              </q-card-section>
-              <q-card-section class="q-pa-none" style="color: #f4655f">
-                <div class="text-center">
-                  <span class="text-h2 text-center">$50</span>/mo
-                </div>
-              </q-card-section>
-              <q-card-section>
-                <div class="text-center q-px-lg">
-                  <q-btn size="md" class="full-width q-pa-xs"
-                     style="background: #f4655f; color: white" label="Choose Plan"/>
-                     <br>
-                     <div class="q-mt-md">Terms and Conditions apply</div>
-                </div>
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col-lg-3 col-md-3 col-xs-12 col-sm-6 q-px-lg">
-            <q-card>
-              <q-card-section class="text-white q-pa-md" style="background: #8b3bbd">
-                <div class="text-h6 text-center">
-                  PREMIUM
-                </div>
-              </q-card-section>
-              <q-card-section class="q-pa-md">
-                <q-list dense padding style="border-bottom: 1px solid lightgrey;">
-                  <q-item><span class="text-weight-bold">For average companies</span></q-item>
-                  <q-item>
-                      50 GB storage
-                  </q-item>
-                  <q-item>
-                      10 Domains
-                  </q-item>
-                  <q-item>
-                      15 Projects
-                  </q-item>
-                  <q-item>
-                      Free Deployment
-                  </q-item>
-                </q-list>
-              </q-card-section>
-              <q-card-section class="q-pa-none" style="color: #8b3bbd">
-                <div class="text-center">
-                  <span class="text-h2 text-center">$250</span>/mo
-                </div>
-              </q-card-section>
-              <q-card-section>
-                <div class="text-center q-px-lg">
-                  <q-btn size="md" class="full-width q-pa-xs"
-                     :style="'background: #8b3bbd; color: white'" label="Choose Plan"/>
-                     <br>
-                     <div class="q-mt-md">Terms and Conditions apply</div>
-                </div>
-              </q-card-section>
-            </q-card>
-          </div>
-          <div class="col-lg-3 col-md-3 col-xs-12 col-sm-6 q-px-lg">
-            <q-card>
-              <q-card-section class="text-white" style="background: #3b97d1">
-                <div class="text-h6 text-center">
-                  PROFESSIONAL
-                </div>
-              </q-card-section>
-              <q-card-section class="q-pa-md">
-                <q-list dense padding style="border-bottom: 1px solid lightgrey;">
-                  <q-item><span class="text-weight-bold">For large companies</span></q-item>
-                  <q-item>
-                      50 GB storage
-                  </q-item>
-                  <q-item>
-                      10 Domains
-                  </q-item>
-                  <q-item>
-                      15 Projects
-                  </q-item>
-                  <q-item>
-                      Free Deployment
-                  </q-item>
-                </q-list>
-              </q-card-section>
-              <q-card-section class="q-pa-none" style="color: #3b97d1">
-                <div class="text-center">
-                  <span class="text-h2 text-center">$500</span>/mo
-                </div>
-              </q-card-section>
-              <q-card-section>
-                <div class="text-center q-px-lg">
-                  <q-btn size="md" class="full-width q-pa-xs"
-                     style="background:#3b97d1; color: white" label="Choose Plan"/>
-                     <br>
-                     <div class="q-mt-md">Terms and Conditions apply</div>
-                </div>
-              </q-card-section>
-            </q-card>
-          </div>
-        </div>   
-        <br>
-        <br>
-        </div></div>
+</div>    
+          
 <div class="row" id="id_news">
           <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-            <h5 class="text-center">Latest News
+            <h5 class="text-center">新闻资讯
               <br>
               <span
-                class="text-center text-grey text-h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                class="text-center text-grey text-h6">News Center</span>
             </h5>
           </div>
         </div>
@@ -696,44 +467,20 @@ labore et dolore magna aliqua.
 <div style="background-color: #000000ad !important;">
 <div class="row" id="id_news">
   <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-    <h5 class="text-center text-white">Contact Us
+    <h5 class="text-center text-white">联系我们
       <br>
       <span
-        class="text-center text-grey text-h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        class="text-center text-grey text-h6">Contact Us</span>
     </h5>
   </div>
 </div>
-<div class="row text-center flex flex-center q-pb-lg">
+<div class="row text-center flex flex-center q-pb-lg" style="color: white;">
 
-<div class="col-md-6 col-lg-6 col-sx-12 col-sm-12 q-gutter-lg q-px-xl q-pb-none q-ma-none">
-	      <q-input bg-color="white" outlined label="Your Name *">
-		<template v-slot:append>
-		  <q-icon name="event" :style="'color:' + theme_color" />
-		</template>
-	      </q-input>
-<q-input bg-color="white" outlined label="Your Email *">
-		<template v-slot:append>
-		  <q-icon name="event" :style="'color:' + theme_color" />
-		</template>
-	      </q-input>
-<q-input bg-color="white" outlined label="Your Phone *">
-		<template v-slot:append>
-		  <q-icon name="event" :style="'color:' + theme_color" />
-		</template>
-	      </q-input>
-</div>
-<div class="col-md-6 col-lg-6 col-sx-12 col-sm-12 q-gutter-lg q-px-xl q-pb-none q-ma-none">
-<q-input class="" type="textarea" bg-color="white" outlined label="Your Message *">
-<template v-slot:append>
-		  <q-icon name="event" :style="'color:' + theme_color" />
-		</template>
-	      </q-input>
-</div>
+河北省唐山市xxxx
+手机号 后面再加上地图api
 </div>
 <div class="row flex flex-center text-center q-pb-xl q-mt-md">
-<div class="col-md-12 col-lg-12 col-sx-12 col-sm-12">
-<q-btn size="lg" :style="'background:'+ theme_color +'; color: white'" label="Send Message"/>
-</div>
+
 </div>
 </div>
 </div>
@@ -888,7 +635,6 @@ labore et dolore magna aliqua.
       padding: 20px
       line-height: normal
       font-family: Georgia, serif
-      font-style: italic
 
     .my-button-container
       width: 100%
