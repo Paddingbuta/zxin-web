@@ -6,7 +6,23 @@ const routes = [
   },
   {
     path: '/about',
-    component: () => import('pages/About.vue')
+    component: () => import('pages/About_2.vue')
+  },
+  {
+    path: '/contact',
+    component: () => import('pages/Contact.vue')
+  },
+  {
+    path: '/news',
+    component: () => import('pages/Error404.vue')
+  },
+  {
+    path: '/products',
+    component: () => import('pages/Products.vue')
+  },
+  {
+    path: '/eg',
+    component: () => import('pages/Eg.vue')
   }
 ]
 

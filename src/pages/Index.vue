@@ -1,39 +1,6 @@
 <template>
   <q-layout view="lHh lpr lFf">
-    <q-header class="q-py-sm" style="background-color: #ffffff;" :style="'border-bottom: 2px solid '+ theme_color">
-        <q-toolbar>
-          <img :src="require('../statics/icons/main_logo.png')" alt="Logo" style="height: 50px; margin-right: 10px;">
-
-
-          <span :style="'font-size: 25px;color:'+theme_color+'; font-weight: bold'" class="text-h6 q-mr-md">庄信科技</span>
-        <q-space ></q-space>
-      <q-tabs v-model="selected_tab" shrink>
-        <q-tab :style= "[selected_tab == 't_0' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="$router.push('/about')" style="width:120px;min-height:auto !important;color: black" label="关于我们" />
-        <q-tab :style= "[selected_tab == 't_1' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_about_us');" style="width:120px;min-height:auto !important;color: black" label="产品展示" />
-        <q-tab :style= "[selected_tab == 't_2' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_services');" style="width:120px;min-height:auto !important;color: black" label="生产流程" />
-        <q-tab :style= "[selected_tab == 't_3' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_testimonial');" style="min-height:auto !important;color: black" label="公司团队" />
-        <q-tab :style= "[selected_tab == 't_4' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_team');" style="width:120px;min-height:auto !important;color: black" label="新闻资讯" />
-	<q-tab :style= "[selected_tab == 't_6' ? {backgroundColor: theme_color} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_news');" style="width:120px;min-height:auto !important;color: black" label="联系我们" />
-        <q-btn class="q-mr-md" size="12px" :style="'min-height:auto !important;background:'+ theme_color +'; color: white; padding:1px'" dense icon="color_lens">
-            <q-tooltip transition-show="flip-right"
-                       transition-hide="flip-left" self="center left" anchor="center right">Theme color
-            </q-tooltip>
-            <q-menu anchor="bottom left" self="bottom right" transition-show="flip-right"
-                    transition-hide="flip-left">
-              <q-color
-                v-model="bg_color"
-                no-header
-                no-footer
-                default-view="palette"
-                class="my-picker"
-                @input="changeBgColor()"
-              />
-            </q-menu>
-          </q-btn>
-      </q-tabs>
-        
-      </q-toolbar>
-    </q-header>
+    
     <q-page-container>
       <q-page>
         <q-carousel
@@ -49,11 +16,11 @@
           transition-next="slide-left"
           height="639px"
         >
-          <q-carousel-slide class="q-pa-none" :name="1" img-src="/statics/images/image_1.jpg">
+          <q-carousel-slide class="q-pa-none" :name="1" img-src="/statics/images/image_4.jpg">
 <div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.3) !important;">
             <div class="custom-caption">
-              <div class="text-h2 main_line animation_2">开创未来，科技引领</span></div><br><br><br>
-              <div class="text-h4 animation_1">做行业标准的示范者，做未来赛道的定义者</div><br><br><br>
+              <div class="text-h2 main_line animation_2">因为专业 所以信赖</span></div><br><br><br>
+              <div class="text-h4 animation_1">专业铸就品质 诚信创造价值</div><br><br><br>
 <div class="animation_2">
 </div>
             </div>
@@ -62,8 +29,8 @@
           <q-carousel-slide class="q-pa-none":name="2" img-src="/statics/images/image_2.jpg">
 <div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.3) !important;">
             <div class="custom-caption">
-    	      <div class="text-h2 main_line animation_2" style="font-size:65px;">专业研发，成就卓越</div><br><br><br>
-              <div class="text-h4 animation_1">以每一毫米的苛求，兑现超越期待的品质承诺</div><br><br><br>
+    	      <div class="text-h2 main_line animation_2" style="font-size:65px;">技术研发 服务客户</div><br><br><br>
+              <div class="text-h4 animation_1">科技为本 客户至上</div><br><br><br>
 <div class="animation_2">
 </div>
             </div>
@@ -72,327 +39,81 @@
           <q-carousel-slide class="q-pa-none":name="3" img-src="/statics/images/image_3.jpg">
 <div class="full-height full-width flex flex-center" style="background-color: rgba(0, 0, 0, 0.3) !important;">
             <div class="custom-caption">
-    	      <div class="text-h2 main_line animation_2" style="font-size:65px;">源自自然，铸就品质</span></div><br><br><br>
-              <div class="text-h4 animation_1">从大地到工艺，赋能可持续的创新之路</div><br><br><br>
+    	      <div class="text-h2 main_line animation_2" style="font-size:65px;">源自澳洲 锆然天成</span></div><br><br><br>
+              <div class="text-h4 animation_1">锆以为贵 质感非凡</div><br><br><br>
 <div class="animation_2">
 </div>
             </div>
 </div>
           </q-carousel-slide>
         </q-carousel>
-        
-        <div class="row">
+        <!--
+        <div class="row" style="padding: 80px 20px;">
           <div class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
-            <q-card class="q-pa-sm flex flex-center text-center box-shadow" style="margin: 40px;">
+            <q-card class="q-pa-sm flex flex-center text-center box-shadow" style="margin: 40px;  transform: scale(0.9);">
 
 
               <q-card-section>
                 <q-icon size="110px" name="ballot" :style="'color:'+theme_color"/>
-                <div class="text-h6">Web &nbsp;Design</div>
+                <div class="text-h6">研发创新</div>
 
               </q-card-section>
 
               <q-card-section class="q-pt-none">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
+                20余年专注陶瓷材料研发
               </q-card-section>
             </q-card>
           </div>
           <div class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
-            <q-card class="q-pa-sm flex flex-center text-center box-shadow" style="margin: 40px;">
+            <q-card class="q-pa-sm flex flex-center text-center box-shadow" style="margin: 40px;  transform: scale(0.9);">
 
 
               <q-card-section>
                 <q-icon size="110px" name="view_comfy" :style="'color:'+theme_color"/>
-                <div class="text-h6">Graphics Design</div>
+                <div class="text-h6">绿色生产</div>
 
               </q-card-section>
 
               <q-card-section class="q-pt-none">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
+                环保工艺践行可持续发展
               </q-card-section>
             </q-card>
           </div>
           <div class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
-            <q-card class="q-pa-sm flex flex-center text-center box-shadow" style="margin: 40px;">
+            <q-card class="q-pa-sm flex flex-center text-center box-shadow" style="margin: 40px;  transform: scale(0.9);">
 
 
               <q-card-section>
                 <q-icon size="110px" name="people" :style="'color:'+theme_color"/>
-                <div class="text-h6">Wordpress Theme</div>
+                <div class="text-h6">专业团队</div>
 
               </q-card-section>
 
               <q-card-section class="q-pt-none">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
+                百人专业技术团队保驾护航           
               </q-card-section>
             </q-card>
           </div>
 
           <div class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
-            <q-card class="q-pa-sm flex flex-center text-center box-shadow" style="margin: 40px;">
+            <q-card class="q-pa-sm flex flex-center text-center box-shadow" style="margin: 40px;  transform: scale(0.9);">
 
 
               <q-card-section>
                 <q-icon size="110px" name="people" :style="'color:'+theme_color"/>
-                <div class="text-h6">Wordpress Plugin</div>
+                <div class="text-h6">品质认证</div>
 
               </q-card-section>
 
               <q-card-section class="q-pt-none">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
+                ISO9001质量管理体系认证
               </q-card-section>
             </q-card>
           </div>
-        </div>
-        
-        <div class="quote">
-          <div class="q-pt-xl full-width full-height flex flex-center" style="background-color: #000000ad !important;">
-            <h3 class="text-white" style="font-size: 20px; line-height: 1.5; max-width: 800px; margin-left: auto; margin-right: auto;">
-  唐山庄信科技有限公司成立于1998年，座落于中国的北方瓷都--河北唐山。20多年来，公司专注于卫生陶瓷和日用陶瓷行业的釉料及熔块的研发、生产和技术服务，公司生产智洁釉、抗菌釉、无铅釉、及陶瓷熔块等系列产品，服务于30多家品牌工厂，每年有5000万件卫生洁具产品应用我公司釉料产品。庄信科技秉承诚信经营、品质服务，绿色健康的发展理念，不断研发新产品，与国内院校、科研院所建立了密切的产学研合作关系。
-  <br><br>为了全方位服务好客户，公司经营陶瓷釉料的全系列产品，如：水洗钾长石粉、纤维素CMC、硅酸锆、煅烧氧化锌、煅烧氧化铝粉、方解石粉、白云石粉。
-  <br><br>为了迎接新时代发展战略，公司与高校及科研院所，共同研究开发新能源储能电池材料，金属防护材料，利用固废生产发泡陶瓷绿色建材等，符合国家战略性新型产业的研究。
-  <br><br>“专业铸就品质，诚信创造价值”，公司将以先进的研发手段，严格的管理制度，稳定的产品质量，强有力的营销网络，完善的服务体系，为陶瓷行业的客户提供专业化、标准化的技术服务。<br><br><br>
-</h3>
-
-          </div>
-        </div>
-        <div style="background: #f7f7f7" id="id_portfolio">
-          <br>
-          <div class="row">
-            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-              <h5 class="text-center">产品展示
-                <br>
-                <span class="text-center text-grey text-h6">Products</span>
-              </h5>
-            </div>
-          </div>
-          <br>
-          <div class="row text-center" style="padding-bottom: 99px">
-            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-              <div style="line-height:0">
-                <span v-for="index in 6" :key="index">
-                  <q-flashcard :no-hover="hover" :style="style">
-                    <q-flashcard-section transition="nudge-in" :active="active">
-                      <img :src="'/statics/images/'+index+'.jpg'" width=340 height=263>
-                    </q-flashcard-section>
-                    <q-flashcard-section transition="fade-in" class="fit" :active="active">
-                      <div class="fit" :style="background_style"></div>
-                      <q-flashcard-section transition="drop-down" class="text-center my-header" :active="active">
-                        硅酸锆
-                      </q-flashcard-section>
-                      <q-flashcard-section transition="slide-up-in" class="my-text" :active="active">
-                        庄信科技生产的锆英砂因其高白度、高锆含量和稳定的质量，在中国同类产品中属于一流产品。
-                      </q-flashcard-section>
-                      <q-flashcard-section transition="fade-in" class="fit flex justify-center items-end q-pb-lg"
-                                           :active="active">
-                      </q-flashcard-section>
-                    </q-flashcard-section>
-                  </q-flashcard>
-                  <br v-if="index==3"/>
-                  </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--
-        <div class="row" id="id_about_us">
-          <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-            <h5 class="text-center">About Us
-              <br>
-              <span
-                class="text-center text-grey text-h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-            </h5>
-          </div>
-        </div>
-        <div class="row text-center flex flex-center">
-          <div class="col-md-12 col-lg-12 col-sx-12 col-sm-12 q-gutter-md flex flex-center">
-            <div class="col-md-4 col-lg-4 col-sx-12 col-sm-12">
-              <q-card @mouseover="hoverOver(1)" @mouseout="hoverOutTimeout(1)" style="border: none;" class="my-card text-center box-shadow" flat bordered>
-                <q-img
-                  src="/statics/images/about_1.jpg"
-                />
-
-                <q-card-section>
-                  <div class="text-overline text-orange-9">Overline</div>
-                  <div :class="about_heading_1" :style="'color: ' + about_heading_color_1" class="about_heading_1 text-h6 q-mt-sm q-mb-xs">OFFICE PHILOSOPHY</div>
-                  <div class="text-caption text-grey-9">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </div>
-                </q-card-section>
-              </q-card>
-            </div>
-            <div class="col-md-4 col-lg-4 col-sx-12 col-sm-12">
-              <q-card @mouseover="hoverOver(2)" @mouseout="hoverOutTimeout(2)" :style="'color: ' + about_heading_color_2" style="border: none;" class="my-card text-center box-shadow" flat bordered>
-                <q-img
-                  src="/statics/images/about_2.jpg"
-                />
-
-                <q-card-section>
-                  <div class="text-overline text-orange-9">Overline</div>
-                  <div :class="about_heading_2" :style="'color: ' + about_heading_color_2" class="text-h6 q-mt-sm q-mb-xs">OFFICE MISSION</div>
-                  <div class="text-caption text-grey-9">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </div>
-                </q-card-section>
-              </q-card>
-            </div>
-            <div class="col-md-4 col-lg-4 col-sx-12 col-sm-12">
-              <q-card @mouseover="hoverOver(3)" @mouseout="hoverOutTimeout(3)" style="border: none;" class="my-card text-center box-shadow" flat bordered>
-                <q-img
-                  src="/statics/images/about_3.jpg"
-                />
-
-                <q-card-section>
-                  <div class="text-overline text-orange-9">Overline</div>
-                  <div :class="about_heading_3" :style="'color: ' + about_heading_color_3" class="text-h6 q-mt-sm q-mb-xs">OFFICE VALUE & RULES</div>
-                  <div class="text-caption text-grey-9">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
-                  </div>
-                </q-card-section>
-              </q-card>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>
-        <div style="background: #f7f7f7" id="id_services">
-          <div class="row">
-            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-              <h5 class="text-center">Our Services
-                <br>
-                <span
-                  class="text-center text-grey text-h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-              </h5>
-            </div>
-          </div> 
-          <div class="q-pa-xl">       
-            <div class="row q-col-gutter-sm ">
-              <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                <q-item class="box-shadow q-pa-none q-ml-xs ">
-                  <q-item-section side :style="'background-color:' + theme_color" class="q-pa-sm q-mr-none text-white">
-                    <q-icon name="compare_arrows" size="65px"></q-icon>
-                  </q-item-section>
-                  <q-item-section class="q-pa-md q-ml-none">
-                    <q-item-label class="text-h6 text-grey-9 text-uppercase">Blockchain</q-item-label>
-                    <q-item-label class="text-grey-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</q-item-label>
-                  </q-item-section>
-                </q-item>
-              </div>
-              <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                <q-item class="box-shadow q-pa-none q-ml-xs">
-                  <q-item-section side :style="'background-color:' + theme_color" class="q-pa-sm q-mr-none text-white">
-                    <q-icon name="web" size="65px"></q-icon>
-                  </q-item-section>
-                  <q-item-section class="q-pa-md q-ml-none">
-                    <q-item-label class="text-h6 text-grey-9 text-uppercase">Web Design</q-item-label>
-                    <q-item-label class="text-grey-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</q-item-label>
-                  </q-item-section>
-                </q-item>
-              </div>
-              <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                <q-item class="box-shadow q-pa-none q-ml-xs q-mr-xs">
-                  <q-item-section side :style="'background-color:' + theme_color" class="q-pa-sm q-mr-none text-white">
-                    <q-icon name="fab fa-wordpress" size="65px"></q-icon>
-                  </q-item-section>
-                  <q-item-section class="q-pa-md q-ml-none">
-                    <q-item-label class="text-h6 text-grey-9 text-uppercase">Wordpress</q-item-label>
-                    <q-item-label class="text-grey-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</q-item-label>
-                  </q-item-section>
-                </q-item>
-              </div>
-            </div>
-            <div class="row q-col-gutter-sm q-mt-lg">
-              <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                <q-item class="box-shadow q-pa-none q-ml-xs ">
-                  <q-item-section side :style="'background-color:' + theme_color" class="q-pa-sm q-mr-none text-white">
-                    <q-icon name="settings" size="65px"></q-icon>
-                  </q-item-section>
-                  <q-item-section class="q-pa-md q-ml-none">
-                    <q-item-label class="text-h6 text-grey-9 text-uppercase">DevOps</q-item-label>
-                    <q-item-label class="text-grey-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</q-item-label>
-                  </q-item-section>
-                </q-item>
-              </div>
-              <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                <q-item class="box-shadow q-pa-none q-ml-xs">
-                  <q-item-section side :style="'background-color:' + theme_color" class="q-pa-sm q-mr-none text-white">
-                    <q-icon name="fas fa-database" size="65px"></q-icon>
-                  </q-item-section>
-                  <q-item-section class="q-pa-md q-ml-none">
-                    <q-item-label class="text-h6 text-grey-9 text-uppercase">Big Data</q-item-label>
-                    <q-item-label class="text-grey-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</q-item-label>
-                  </q-item-section>
-                </q-item>
-              </div>
-              <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                <q-item class="box-shadow q-pa-none q-ml-xs q-mr-xs">
-                  <q-item-section side :style="'background-color:' + theme_color" class="q-pa-sm q-mr-none text-white">
-                    <q-icon name="dynamic_feed" size="65px"></q-icon>
-                  </q-item-section>
-                  <q-item-section class="q-pa-md q-ml-none">
-                    <q-item-label class="text-h6 text-grey-9 text-uppercase">AI</q-item-label>
-                    <q-item-label class="text-grey-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</q-item-label>
-                  </q-item-section>
-                </q-item>
-              </div>
-            </div>
-          </div>          
         </div>
         -->
-<div class="quote" id="id_testimonial">
-<div style="background-color: #000000ad !important;">
-<q-carousel
-      v-model="review_slide"
-      swipeable
-      animated
-      infinite
-      autoplay
-      arrows
-      navigation
-      padding
-      navigation-position="bottom"
-      class="text-white full-height bg-transparent q-mx-xl"
-    >
-      <q-carousel-slide style="padding-bottom: 140px" name="style" class="column no-wrap flex-center">
-        <img :style="'margin-top:100px;border-radius:5px;border: 4px solid ' + theme_color" src="/statics/images/team_1.jpg" width=150 height=150>
-	<div class="q-mt-md text-h6 text-center">
-	   <span :style="'color:'+theme_color">老爸</span><br><span class="text-overline">董事长</span>
-	</div>
-        <div class="q-mt-md text-h6 text-center">
-          老爸，唐山庄信科技有限公司的董事长，具有超过30年的行业经验。
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide style="padding-bottom: 140px" name="tv" class="column no-wrap flex-center">
-        <img :style="'margin-top:100px;border-radius:5px;border: 4px solid ' + theme_color" src="/statics/images/team_2.jpg" width=150 height=150>
-	<div class="q-mt-md text-h6 text-center">
-	   <span :style="'color:'+theme_color">John Doe</span><br><span class="text-overline">Lead Developer</span>
-	</div>
-        <div class="q-mt-md text-h6 text-center">
-          Lorem ipsum dolor sit amet, consectetur
-adipiscing elit, sed do eiusmod tempor incididunt ut<br>
-labore et dolore magna aliqua.
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide style="padding-bottom: 140px" name="layers" class="column no-wrap flex-center">
-        <img :style="'margin-top:100px;border-radius:5px;border: 4px solid ' + theme_color" src="/statics/images/team_3.jpg" width=150 height=150>
-	<div class="q-mt-md text-h6 text-center">
-	   <span :style="'color:'+theme_color">John Doe</span><br><span class="text-overline">Product Owner</span>
-	</div>
-        <div class="q-mt-md text-h6 text-center">
-          Lorem ipsum dolor sit amet, consectetur
-adipiscing elit, sed do eiusmod tempor incididunt ut<br>
-labore et dolore magna aliqua.
-        </div>
-      </q-carousel-slide>
-    </q-carousel>
-</div>
-</div>    
-          
+
+        <!--
 <div class="row" id="id_news">
           <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
             <h5 class="text-center">新闻资讯
@@ -463,40 +184,39 @@ labore et dolore magna aliqua.
         </div>
         <br>
         <br>
-<div class="contact_us" id="id_contact_us">
-<div style="background-color: #000000ad !important;">
-<div class="row" id="id_news">
-  <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-    <h5 class="text-center text-white">联系我们
-      <br>
-      <span
-        class="text-center text-grey text-h6">Contact Us</span>
-    </h5>
-  </div>
-</div>
-<div class="row text-center flex flex-center q-pb-lg" style="color: white;">
-
-河北省唐山市xxxx
-手机号 后面再加上地图api
-</div>
-<div class="row flex flex-center text-center q-pb-xl q-mt-md">
-
-</div>
-</div>
-</div>
-        <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;" :style="'border-top: 2px solid '+ theme_color">
-           <div class="q-pa-sm q-gutter-sm">
-	    <q-btn round type="a" href="https://twitter.com/mayank91193"
-                     :style="'background:'+ theme_color +'; color: white !important;'" icon="fab fa-twitter" />
-	    <q-btn round type="a" href="https://github.com/mayank091193/vue-quasar-company-profile-website"
-                     :style="'background:'+ theme_color +'; color: white !important;'" icon="fab fa-github" />
-            <q-btn round type="a" href="mailto:mayank091193@gmail.com"
-                     :style="'background:'+ theme_color +'; color: white !important;'" icon="email" />
-	    <q-btn round type="a" href="https://github.com/sponsors/mayank091193"
-                     :style="'background:'+ theme_color +'; color: white !important;'" glossy text-color="black" icon="fas fa-heart" />
-	  </div>
-        </q-toolbar>
-
+-->  
+        <div class="grid-container">
+        <!-- 标题 -->
+        <!-- 动态网格 -->
+        <div class="grid-wrapper">
+          <div 
+            v-for="(item, index) in gridItems"
+            :key="index"
+            class="grid-item"
+            :class="`type-${item.type}`"
+            :style="gridItemStyle(item)"
+            @click="handleClick(item)"
+          >
+            <q-img
+              v-if="item.image"
+              :src="item.image"
+              :ratio="item.ratio"
+              class="grid-image"
+            >
+              <div class="image-overlay flex flex-center column">
+                <div class="text-h6 text-white text-center">{{ item.title }}</div>
+                <div class="text-caption text-grey-3 q-mt-sm">{{ item.desc }}</div>
+              </div>
+            </q-img>
+  
+            <div v-else class="text-card flex flex-center column">
+              <q-icon :name="item.icon" size="xl" :color="themeColor"/>
+              <div class="text-h6 q-mt-md">{{ item.title }}</div>
+              <div class="text-caption text-grey-7 q-mt-sm text-center">{{ item.desc }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
       </q-page>
     </q-page-container>
   </q-layout>
@@ -525,13 +245,33 @@ labore et dolore magna aliqua.
                 hover: false,
                 active: false,
                 theme_color: 'rgb(0, 163, 82)',
-                background_style: 'background-color:rgba(0, 163, 82, 0.7);',
+                background_style: 'background-color:rgba(0, 163, 82, 0.9);',
                 about_heading_1: [],
                 about_heading_2: [],
                 about_heading_3: [],
                 about_heading_color_1: '#424242',
                 about_heading_color_2: '#424242',
-                about_heading_color_3: '#424242'
+                about_heading_color_3: '#424242',
+                themeColor: '#00a352',
+                gridItems: [
+                  // 竖图项目（3:4比例）
+                  { type: 'vertical', image: '/statics/images/a1.jpg', ratio: 3/4, title: '会议中心' },
+                  { type: 'vertical', image: '/statics/images/b1.jpg', ratio: 6/8, title: '广交会' },
+                  { type: 'vertical', image: '/statics/images/a13.jpg', ratio: 6/8, title: '广交会' },
+                  { type: 'vertical', image: '/statics/images/a14.jpg', ratio: 6/8, title: '广交会' },
+                  //{ type: 'text', icon: 'business', title: '25年行业经验', desc: '专业陶瓷材料研发生产' },
+                  { type: 'vertical', image: '/statics/images/a2.jpg', ratio: 3/4, title: '研发中心'},
+                  { type: 'vertical', image: '/statics/images/b2.jpg', ratio: 6/8, title: '产品物流'},
+                  { type: 'vertical', image: '/statics/images/a7.jpg', ratio: 3/4, title: '熔块生产车间' },
+                  { type: 'vertical', image: '/statics/images/a3.jpg', ratio: 3/4, title: '质检流程' },
+                  { type: 'vertical', image: '/statics/images/a4.jpg', ratio: 3/4, title: '质检流程' },
+                  { type: 'vertical', image: '/statics/images/a5.jpg', ratio: 3/4, title: '质检流程' },
+                  { type: 'vertical', image: '/statics/images/a6.jpg', ratio: 3/4, title: '高温水淬' },
+                  { type: 'vertical', image: '/statics/images/a10.jpg', ratio: 3/4, title: '待发货产品' },
+                  { type: 'vertical', image: '/statics/images/a8.jpg', ratio: 3/4, title: '创新奖项' },
+                  { type: 'vertical', image: '/statics/images/a11.jpg', ratio: 3/4, title: '访问客户' },
+                  { type: 'vertical', image: '/statics/images/a12.jpg', ratio: 3/4, title: '校招会' },
+                ]
             }
         },
         computed: {
@@ -578,6 +318,23 @@ labore et dolore magna aliqua.
                 this['about_heading_' + index] = [];                
               }, 1000);              
             },
+            gridItemStyle(item) {
+              const styles = {
+                vertical: { gridColumn: 'span 1', gridRow: 'span 2' },
+                horizontal: { gridColumn: 'span 2', gridRow: 'span 1' },
+                text: { 
+                  gridColumn: 'span 1', 
+                  gridRow: 'span 1',
+                  background: '#f8f9fa',
+                  borderRadius: '8px'
+                }
+              }
+              return styles[item.type]
+            },
+            handleClick(item) {
+              // 处理点击事件
+              console.log('点击项目:', item.title)
+            }
         }
     }
 </script>
@@ -710,4 +467,90 @@ labore et dolore magna aliqua.
     .custom_tab
       width: 130px;
 </style>
+<style lang="scss" scoped>
+.grid-container {
+  background-color: #e6f2ff;  /* 淡蓝背景 */
+  padding: 60px 0;            /* 上下60px间距，左右0 */
 
+  width: 100%;
+  box-sizing: border-box;
+}
+.grid-wrapper {
+  display: grid;
+  gap: 1.5rem;
+  width: 80%;
+  margin: 0 auto;  /* 内容居中 */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 150px;
+  padding: 0 20px; /* 左右内边距，避免太贴边 */
+}
+
+  
+  .grid-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: pointer;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  
+    &.type-horizontal {
+      grid-column: span 2;
+    }
+  
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.2);
+      padding: 20px;
+    }
+  
+    .text-card {
+      padding: 30px;
+      height: 100%;
+      transition: all 0.3s;
+      
+      &:hover {
+        background: rgba(0,163,82,0.05);
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .grid-wrapper {
+      grid-template-columns: 1fr;
+      
+      .grid-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+      }
+    }
+  }
+  .grid-image {
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+    // 保证容器隐藏溢出部分
+    .grid-item {
+    overflow: hidden; // 确保这个属性存在
+    }
+    .grid-item.type-horizontal {
+    grid-column: span 3;  // 保持横向占2列
+    grid-row: span 1;     // 高度保持单行
+    }
+  </style>

@@ -6,14 +6,14 @@
         style="width:30vw;max-width:150px;"
       >
     </p>
-    <p class="text-faded">
-      Sorry, nothing here...<strong>(404)</strong>
+    <p class="text-faded text-h6">
+      🛠 页面施工中，精彩内容即将上线！
     </p>
     <q-btn
       color="secondary"
       style="width:200px;"
       to="/"
-      label="Go back"
+      label="返回"
     />
   </div>
 </template>
